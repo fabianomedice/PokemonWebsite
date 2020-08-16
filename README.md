@@ -24,24 +24,24 @@ Tabela 1: "pokemon_list"<br>
 <br>
 Tabela 2: "torneios"<br>
 6 Colunas:<br>
-- "CodigoTorneio" - tipo: text utf8mb4_unicode_ci <br>
-- "Generation" - tipo: int(11) <br>
-- "User" - tipo: text utf8mb4_unicode_ci <br>
-- "OrdemPickBan" - tipo: int(11) <br>
-- "Ban" - tipo: text utf8mb4_unicode_ci <br>
-- "Pick" - tipo: text utf8mb4_unicode_ci <br>
+-"CodigoTorneio" - tipo: text utf8mb4_unicode_ci <br>
+-"Generation" - tipo: int(11) <br>
+-"User" - tipo: text utf8mb4_unicode_ci <br>
+-"OrdemPickBan" - tipo: int(11) <br>
+-"Ban" - tipo: text utf8mb4_unicode_ci <br>
+-"Pick" - tipo: text utf8mb4_unicode_ci <br>
 <br>
 Tabela 3: "user_list"<br>
 4 Colunas:<br>
-- "User" - tipo: text utf8mb4_unicode_ci <br>
-- "Nome" - tipo: text utf8mb4_unicode_ci <br>
-- "Avatar" - tipo: text utf8mb4_unicode_ci <br>
-- "Torneios" - tipo: text utf8mb4_unicode_ci <br>
+-"User" - tipo: text utf8mb4_unicode_ci <br>
+-"Nome" - tipo: text utf8mb4_unicode_ci <br>
+-"Avatar" - tipo: text utf8mb4_unicode_ci <br>
+-"Torneios" - tipo: text utf8mb4_unicode_ci <br>
 <br>
 Tabela 4: "vetores_torneio"<br>
 4 Colunas:<br>
-- "CodigoTorneio" - tipo: text utf8mb4_unicode_ci <br>
-- "Gen" - tipo: int(11) <br>
-- "indexPickBan" - tipo: int(11) <br>
-- "vetorPickBan" - tipo: text utf8mb4_unicode_ci <br>
+-"CodigoTorneio" - tipo: text utf8mb4_unicode_ci <br>
+-"Gen" - tipo: int(11) <br>
+-"indexPickBan" - tipo: int(11) <br>
+-"vetorPickBan" - tipo: text utf8mb4_unicode_ci <br>
 <br>
