@@ -7,6 +7,7 @@ Eles estão para Wamp Server. Deve se atualizar o ip e senha para o servidor <br
 O banco de dados deve conter: <br> 
 <br>
 Tabela 1: "pokemon_list"<br>
+Arquivo: "Banco de Dados Pokemon.xlsx" para adicionar esse banco de dados. <br>
 13 Colunas:<br>
 -"Generation" - tipo: int(11) <br>
 -"Pokedex" - tipo: int(11) <br>
