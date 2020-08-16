@@ -1,0 +1,256 @@
+<!DOCTYPE html> 
+
+<html lang="pt-br" style="scroll-behavior: smooth;">
+	<head>
+		<!-- Titulo da aba-->
+		<title> 
+			Texugos' Pokemon Challenge
+		</title>
+
+		<style> 			
+
+			/*Classe da coluna da esquerda*/
+			.C_esquerda	{
+						width: 45%;
+						margin-left: 4%;
+						margin-right: 1%;
+					}
+
+			/*Classe da coluna da direita*/
+			.C_direita	{
+						max-width: 450px;
+						width: 45%;
+						margin-left: 1%;
+						margin-right: 4%;
+					}
+
+			/*CSS responsível para diferentes tamanhos de tela*/
+			/*Tela perfeita = até width: 1100px; após isto, aumentar a .C_esquerda*/
+			@media screen and (max-width: 668px) {
+				#header	{
+					font-size:95%;
+						}
+												}
+			@media screen and (max-width: 652px) {
+				#header	{
+					font-size:93%;
+						}
+												}
+			@media screen and (max-width: 600px) {
+				#header	{
+					font-size:90%;
+						}
+												}
+			
+			@media screen and (max-width: 500px) {
+				#header	{
+					font-size:85%;
+						}
+												}
+
+			@media screen and (max-width: 400px) {
+				#header	{
+					font-size:75%;
+						}
+												}
+			@media screen and (max-width: 360px) {
+				#header	{
+					font-size:70%;
+						}
+												}
+
+			@media screen and (min-width: 1250px) {
+				.C_esquerda {
+					
+						width: 50%;
+						}
+				.C_direita {
+						width: 40%; /*500px/1250px*/
+						   }
+												}
+
+			@media screen and (min-width: 1400px) {
+				.C_esquerda {
+					
+						width: 55%;
+						}
+				.C_direita {
+						width: 35%; /*500px/1400px*/
+						   }
+												}
+
+			@media screen and (min-width: 1650px) {
+				.C_esquerda {
+					
+						width: 60%;
+						}
+				.C_direita {
+						width: 30%; /*500px/1650px*/
+						   }
+												}
+			@media screen and (min-width: 2000px) {
+				.C_esquerda {
+					
+						width: 65%;
+						}
+				.C_direita {
+						width: 25%; /*500px/2000px*/
+						   }
+												}
+
+				@media screen and (min-width: 2500px) {
+				.C_esquerda {
+					
+						width: 70%;
+						}
+				.C_direita {
+						width: 20%; /*500px/2500px*/
+						   }
+												}
+
+			/*Classe da coluna do meio*/
+			#header	{
+					position:fixed; 
+					top: 0px; 
+					width: 100%; 
+					overflow: hidden;
+					/*background-color: #2E3133;*/
+					background-color: #110F40;
+					/*color:  #898F96;*/
+					color:  #CFD8E3;
+					/*margin-right: 5%;*/
+					z-index:1; /*layer acima do da página*/
+					height: 250px;
+				}
+			#nav {
+				background-color: #221D80;
+				color: #CFD8E3;
+				z-index:1; /*layer acima do da página*/
+				}
+
+			/* Clear floats after the columns */
+			section:after 	{
+						content: "";
+						display: table;
+						clear: both;
+					}
+			a{
+				color: #CFD8E3; 
+				margin: 20px;
+			}
+
+			h1, h2, p, ul{
+				text-align: center;
+			}
+			li {
+				display: inline-block; 
+				padding: 1px;
+				
+			}
+			/* 
+			Conserta o link levar para embaixo do nav
+			Solução do site http://nicolasgallagher.com/jump-links-and-viewport-positioning/
+			*/
+			#Gen1::before, #Gen2::before, #Gen3::before, #Gen4::before, #Gen5::before, #Gen6::before, #Gen7::before{
+				content: "";
+				display: block;
+				height: 250px;
+				margin: -250px 0 0;
+			}
+
+		</style>
+		<!-- Metadados -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="refresh" content="5"> <!-- Atualiza a cada 5 segundos -->
+		<meta name="author" content="Fabiano Médice">
+		<meta name="description" content="Controle e histórico dos torneios de pokemon dos Texugos S/A">
+		<!-- Link dos Documentos Externos -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/funcoesPickBan.js"></script>
+
+		<script type="text/javascript">
+
+			//Carregando o Código do Torneio
+			//location.search -> Pega o texto da URL do GET METHOD
+			//substring(x,y) -> Pega as strings a partir do char x e termina no char y (default é o final, então não precisa colocar)
+			//é a partir do 15 por: [0]="?" [1]="C" [2]="o" [3]="d" [4]="i" [5]="g" [6]="o" [7]="T" [8]="o" [9]="r" [10]="n" [11]="e" [12]="i" [13]="o" [14]="="
+			var $CodigoTorneio = encodeURI(location.search.substring(15));
+			console.log($CodigoTorneio);			
+		</script>
+	</head>
+	<body style="margin: 0px;">
+		<header><div id="header">
+			
+			<h1>Torneio Pokemon - Código: </h1>			
+			<nav><div id="nav">
+				<hr>
+				<h2>Navegação por geração</h2>
+				<ul style="list-style: none;">
+				<li><a href="#Gen1"><b>Gen I</b></a></li>
+				<li><a href="#Gen2"><b>Gen II</b></a></li>
+				<li><a href="#Gen3"><b>Gen III</b></a></li>
+				<li><a href="#Gen4"><b>Gen IV</b></a></li>
+				<li><a href="#Gen5"><b>Gen V</b></a></li>
+				<li><a href="#Gen6"><b>Gen VI</b></a></li>
+				<li><a href="#Gen7"><b>Gen VII</b></a></li>
+				</ul>
+				<hr>
+			</div></nav>
+
+		</div></header>
+
+		<section class="Coluna" style="margin-top: 250px;">
+		<!-- 2 Colunas -->
+
+		<!-- Coluna da esquerda -->
+		<div class="coluna C_esquerda">
+			<h1 id="Titulo">
+				Escolhas do Tier 
+			</h1>
+
+			<hr>
+			<div id="Gen1"> </div>
+			<hr>
+			<div id="Gen2">	</div>
+			<hr>
+			<div id="Gen3">	</div>
+			<hr>
+			<div id="Gen4">	</div>
+			<hr>
+			<div id="Gen5">	</div>
+			<hr>
+			<div id="Gen6">	</div>
+			<hr>
+			<div id="Gen7">	</div>
+		</div>
+
+		<!-- Coluna da direita -->
+		<div class="coluna C_direita">			
+			<p id="ListaPickBan"> </p>
+		</div>
+
+		</section>
+
+		<footer style="height:50px;">
+			
+		</footer>
+
+		<script>
+			//Valores Defaults para inicializar a página
+			var $indexPickBan = 0; //Indica o indice vetor do PickBan e Eventos
+			var $vetorPickBan = [0]; //cria o vetor de picks e bans
+			var $vetorPlayersUser = [0]; //Cria Variavel Global que recebe o vetor com os usernames
+			var $Pokemon_List =  [0]; //Cria Banco de Dados Global da lista de pokemons
+			var $Jogadores =  [0];//Cria Banco de Dados Global da lista de jogadores
+			var $Gen = 0; //Cria Variavel Global com a informação da geração
+ 
+			Chamar_Banco_de_Dados_Players($CodigoTorneio); //chama o banco de dados para o site
+			Inicializador($CodigoTorneio); //inicializa as variaveis do site
+			Chamar_Banco_de_Dados_Pokemon($Gen); //chama o banco de dados para o site
+			//Criar_Ordem_Eventos($vetorPlayersUser);//cria a ordem de pick e ban
+			Criar_Botoes(Eventos.Tier[$indexPickBan]);//Chama tier 1
+			Criar_Jogadores($vetorPlayersUser); //receber o vetor com os usernames dos players
+		</script>
+	</body>
+</html>

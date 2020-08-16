@@ -4,39 +4,24 @@
 	<head>
 		<!-- Titulo da aba-->
 		<title> 
-			Texugo's Pokemon Challenge
+			Texugos' Pokemon Challenge
 		</title>
 
 		<style> 			
-			body {background-color: rgb(180,180,180);}
-
-			table, th, td	{
-					border: 1px solid black;
-					border-collapse: collapse;
-					}
-
-			/*Classe das colunas do corpo*/
-			.coluna	{
-					box-sizing: border-box; /*faz o width medir todos os elementos juntos e não só o conteúdo*/
-					float: left;
-					padding: 10px;
-					text-align: center;
-				}
 
 			/*Classe da coluna da esquerda*/
 			.C_esquerda	{
-						width: 20%;
+						width: 25%;
 					}
 
 			/*Classe da coluna da direita*/
 			.C_direita	{
-						width: 30%;
+						width: 25%;
 					}
 
 			/*Classe da coluna do meio*/
 			.C_meio	{
 					width: 50%;
-					background-color: rgb(210,210,210);
 				}
 
 			/* Clear floats after the columns */
@@ -49,119 +34,80 @@
 		<!-- Metadados -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--<meta http-equiv="refresh" content="30"> <!-- Atualiza a cada 30 segundos -->
-		<meta name="author" content="Texugão">
+		<meta name="author" content="Fabiano Médice">
 		<meta name="description" content="Controle e histórico dos torneios de pokemon dos Texugos S/A">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 
-		<script type="text/javascript">
-			/* Criando o banco de dados enquanto não há comunicação */
-			Banco_de_Dados_Recebido =
-				'{'+
-				'"Pokemon_List":'+ //Nome do banco de dados
-					'['+ 
-						'{"Generation":1,"Pokedex":"001","Nome":"Bulbasaur",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png"},'+
-						'{"Generation":1,"Pokedex":"002","Nome":"Ivysaur",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/73/002Ivysaur.png"},'+
-						'{"Generation":1,"Pokedex":"003","Nome":"Venusaur",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/a/ae/003Venusaur.png"},'+
-						'{"Generation":1,"Pokedex":"004","Nome":"Charmander",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/73/004Charmander.png"},'+
-						'{"Generation":1,"Pokedex":"005","Nome":"Charmeleon",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/4/4a/005Charmeleon.png"},'+
-						'{"Generation":1,"Pokedex":"006","Nome":"Charizard",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/7e/006Charizard.png"},'+
-						'{"Generation":1,"Pokedex":"007","Nome":"Squirtle",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/3/39/007Squirtle.png"},'+
-						'{"Generation":1,"Pokedex":"008","Nome":"Wartortle",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/0/0c/008Wartortle.png"},'+
-						'{"Generation":1,"Pokedex":"009","Nome":"Blastoise",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/0/02/009Blastoise.png"},'+
-
-						'{"Generation":2,"Pokedex":"152","Nome":"Chikorita",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/b/bf/152Chikorita.png"},'+
-						'{"Generation":2,"Pokedex":"153","Nome":"Bayleef",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/c/ca/153Bayleef.png"},'+
-						'{"Generation":2,"Pokedex":"154","Nome":"Meganium",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/d/d1/154Meganium.png"},'+
-						'{"Generation":2,"Pokedex":"155","Nome":"Cyndaquil",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/9/9b/155Cyndaquil.png"},'+
-						'{"Generation":2,"Pokedex":"156","Nome":"Quilava",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/b/b6/156Quilava.png"},'+
-						'{"Generation":2,"Pokedex":"157","Nome":"Typhlosion",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/4/47/157Typhlosion.png"},'+
-						'{"Generation":2,"Pokedex":"158","Nome":"Totodile",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/d/df/158Totodile.png"},'+
-						'{"Generation":2,"Pokedex":"159","Nome":"Croconaw",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/a/a5/159Croconaw.png"},'+
-						'{"Generation":2,"Pokedex":"160","Nome":"Feraligatr",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/d/d5/160Feraligatr.png"},'+
-
-						'{"Generation":3,"Pokedex":"252","Nome":"Treecko",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/2/2c/252Treecko.png"},'+
-						'{"Generation":3,"Pokedex":"253","Nome":"Grovyle",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/e/ea/253Grovyle.png"},'+
-						'{"Generation":3,"Pokedex":"254","Nome":"Sceptile",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/3/3e/254Sceptile.png"},'+
-						'{"Generation":3,"Pokedex":"255","Nome":"Torchic",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/9/91/255Torchic.png"},'+
-						'{"Generation":3,"Pokedex":"256","Nome":"Combusken",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/2/29/256Combusken.png"},'+
-						'{"Generation":3,"Pokedex":"257","Nome":"Blaziken",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/9/90/257Blaziken.png"},'+
-						'{"Generation":3,"Pokedex":"258","Nome":"Mudkip",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/6/60/258Mudkip.png"},'+
-						'{"Generation":3,"Pokedex":"259","Nome":"Marshtomp",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/2/27/259Marshtomp.png"},'+
-						'{"Generation":3,"Pokedex":"260","Nome":"Swampert",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/b/b6/260Swampert.png"},'+
-
-						'{"Generation":4,"Pokedex":"387","Nome":"Turtwig",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/5/5c/387Turtwig.png"},'+
-						'{"Generation":4,"Pokedex":"388","Nome":"Grotle",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/5/53/388Grotle.png"},'+
-						'{"Generation":4,"Pokedex":"389","Nome":"Torterra",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/d/df/389Torterra.png"},'+
-						'{"Generation":4,"Pokedex":"390","Nome":"Chimchar",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/76/390Chimchar.png"},'+
-						'{"Generation":4,"Pokedex":"391","Nome":"Monferno",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/2/2e/391Monferno.png"},'+
-						'{"Generation":4,"Pokedex":"392","Nome":"Infernape",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/f/fb/392Infernape.png"},'+
-						'{"Generation":4,"Pokedex":"393","Nome":"Piplup",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/b/b1/393Piplup.png"},'+
-						'{"Generation":4,"Pokedex":"394","Nome":"Prinplup",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/d/df/394Prinplup.png"},'+
-						'{"Generation":4,"Pokedex":"395","Nome":"Empoleon",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/7f/395Empoleon.png"},'+
-
-						'{"Generation":5,"Pokedex":"495","Nome":"Snivy",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/75/495Snivy.png"},'+
-						'{"Generation":5,"Pokedex":"496","Nome":"Servine",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/73/496Servine.png"},'+
-						'{"Generation":5,"Pokedex":"497","Nome":"Serperior",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/b/b7/497Serperior.png"},'+
-						'{"Generation":5,"Pokedex":"498","Nome":"Tepig",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/5/5b/498Tepig.png"},'+
-						'{"Generation":5,"Pokedex":"499","Nome":"Pignite",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/e/e8/499Pignite.png"},'+
-						'{"Generation":5,"Pokedex":"500","Nome":"Emboar",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/1/18/500Emboar.png"},'+
-						'{"Generation":5,"Pokedex":"501","Nome":"Oshawott",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/3/3b/501Oshawott.png"},'+
-						'{"Generation":5,"Pokedex":"502","Nome":"Dewott",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/e/e4/502Dewott.png"},'+
-						'{"Generation":5,"Pokedex":"503","Nome":"Samurott",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/b/b5/503Samurott.png"},'+
-
-						'{"Generation":6,"Pokedex":"650","Nome":"Chespin",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/c/ca/650Chespin.png"},'+
-						'{"Generation":6,"Pokedex":"651","Nome":"Quilladin",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/71/651Quilladin.png"},'+
-						'{"Generation":6,"Pokedex":"652","Nome":"Chesnaught",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/1/18/652Chesnaught.png"},'+
-						'{"Generation":6,"Pokedex":"653","Nome":"Fennekin",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/3/3d/653Fennekin.png"},'+
-						'{"Generation":6,"Pokedex":"654","Nome":"Braixen",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/0/09/654Braixen.png"},'+
-						'{"Generation":6,"Pokedex":"655","Nome":"Delphox",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/2/21/655Delphox.png"},'+
-						'{"Generation":6,"Pokedex":"656","Nome":"Froakie",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/1/18/656Froakie.png"},'+
-						'{"Generation":6,"Pokedex":"657","Nome":"Frogadier",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/f/fc/657Frogadier.png"},'+
-						'{"Generation":6,"Pokedex":"658","Nome":"Greninja",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/6/67/658Greninja.png"},'+
-
-						'{"Generation":7,"Pokedex":"722","Nome":"Rowlet",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/7/74/722Rowlet.png"},'+
-						'{"Generation":7,"Pokedex":"723","Nome":"Dartrix",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/1/1e/723Dartrix.png"},'+
-						'{"Generation":7,"Pokedex":"724","Nome":"Decidueye",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/a/a4/724Decidueye.png"},'+
-						'{"Generation":7,"Pokedex":"725","Nome":"Litten",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/0/0e/725Litten.png"},'+
-						'{"Generation":7,"Pokedex":"726","Nome":"Torracat",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/d/dc/726Torracat.png"},'+
-						'{"Generation":7,"Pokedex":"727","Nome":"Incineroar",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/2/27/727Incineroar.png"},'+
-						'{"Generation":7,"Pokedex":"728","Nome":"Poppli",	"Tier":1,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/d/d8/728Popplio.png"},'+
-						'{"Generation":7,"Pokedex":"729","Nome":"Brionne",	"Tier":2,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/c/cd/729Brionne.png"},'+
-						'{"Generation":7,"Pokedex":"730","Nome":"Primarina",	"Tier":3,"StatusPick":false,"Imagem":"https://cdn.bulbagarden.net/upload/8/89/730Primarina.png"}'+
-					']'+
-				'}';
-			Banco_de_Dados= JSON.parse(Banco_de_Dados_Recebido);
-//console.log(Banco_de_Dados.Pokemon_List);
+		<script>
+			
 		</script>
 	</head>
-	<body>
-		<header>
-			<hr>
-			<h1 style="text-align:center;">Torneio Pokemon - Pick e Ban list</h1>
-			<hr>
+	<body style="margin: 0px;">
+		<header style="text-align:center; background-color: #110F40; color:  #CFD8E3;">
+			<br>
+			<h1 style="text-align:center;height: 50px;">Torneio Pokemon - Pick e Ban list</h1>
+			
+
+			<div style="text-align:center; background-color: #221D80;">
+				<br>
+				<h2>
+					Código do Torneio Existente			
+				</h2>
+				<form action=PHP/LeituraTorneio.php method="POST">
+					<input type="text" name="CodigoTorneio">
+					<input type="submit">
+				</form>
+	
+				<br><br>
+			</div>
 		</header>
+		
 
 		<section class="Coluna">
 		<!-- 3 Colunas -->
 
 		<!-- Coluna da esquerda -->
 		<div class="coluna C_esquerda">
-			<nav>
-				<h2>Navegação por geração</h2>					
-				<p><a href="#Gen1" style="color:black;"><b>Gen I</b></a></p>
+			
+		</div>
+
+		<!-- Coluna central -->
+		<div class="coluna C_meio">
+
+			<h2 style="text-align:center; ">
+				Novo Torneio
+				<br><br>
+				<hr>
+				Escolha o número de Jogadores<br>
+				<input type="range" id="Players_Value" onchange="Num_Jogadores()" min=2 max=6 value=2>
+				<p id="NumPlayers"> 2</p>
+			</h2>
+			<hr>
+			<form action=PHP/CriarTorneio.php method="POST">
+				
+				<h2>Coloque o Usuário dos jogadores:</h2>
+				<div id="NamePlayers">
+					<label for="username">Usuário:</label> <input type="text" id="username" name="username1"><br>
+					<label for="username">Usuário:</label>	<input type="text" id="username" name="username2"><br>
+				</div>
+			<br>
+			<hr>
+			<h2>Escolha de Geração para o Torneio</h2>
+				
+				<p><input type="radio" name="Gen" value=1 id="txt_Gen"><b>Gen I</b></p>
 				<p style="text-align:center;">
 					<img src="https://cdn.bulbagarden.net/upload/8/80/Red_EN_boxart.png" alt="Red Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/5/5a/Blue_EN_boxart.png" alt="Blue Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/9/95/Yellow_EN_boxart.png" alt="Yellow Version" height="100" width="100">
-				</p>
-				<p><a href="#Gen2" style="color:black;"><b>Gen II</b></a></p>
+				</p>					
+				<p><input type="radio" name="Gen" value=2 id="txt_Gen"><b>Gen II</b></p>
 				<p style="margin:auto; text-align:center;">
 					<img src="https://cdn.bulbagarden.net/upload/c/c7/Gold_EN_boxart.png" alt="Gold Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/f/f5/Silver_EN_boxart.png" alt="Silver Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/6/60/Crystal_EN_boxart.png" alt="Crystal Version" height="100" width="100">
 				</p>
-				<p><a href="#Gen3" style="color:black;"><b>Gen III</b></a></p>
+				<p><input type="radio" name="Gen" value=3 id="txt_Gen"><b>Gen III</b></p>
 				<p style="text-align:center;">
 					<img src="https://cdn.bulbagarden.net/upload/5/5f/Ruby_EN_boxart.png" alt="Ruby Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/6/62/Sapphire_EN_boxart.png" alt="Sapphire Version" height="100" width="100">
@@ -169,7 +115,7 @@
 					<img src="https://cdn.bulbagarden.net/upload/3/3d/LeafGreen_EN_US_boxart.png" alt="LeafGreen Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/6/65/Emerald_EN_boxart.jpg" alt="Emerald Version" height="100" width="100">
 				</p>
-				<p><a href="#Gen4" style="color:black;"><b>Gen IV</b></a></p>
+				<p><input type="radio" name="Gen" value=4 id="txt_Gen"><b>Gen IV</b></p>
 				<p style="text-align:center;">
 					<img src="https://cdn.bulbagarden.net/upload/6/69/Diamond_EN_boxart.jpg" alt="Diamond Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/a/af/Pearl_EN_boxart.jpg" alt="Pearl Version" height="100" width="100">
@@ -177,257 +123,71 @@
 					<img src="https://cdn.bulbagarden.net/upload/6/6e/HeartGold_EN_boxart.jpg" alt="HeartGold Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/5/5c/SoulSilver_EN_boxart.jpg" alt="SoulSilver Version" height="100" width="100">
 				</p>
-				<p><a href="#Gen5" style="color:black;"><b>Gen V</b></a></p>
+				<p><input type="radio" name="Gen" value=5 id="txt_Gen"><b>Gen V</b></p>
 				<p style="text-align:center;">
 					<img src="https://cdn.bulbagarden.net/upload/d/dc/Black_EN_boxart.png" alt="Black Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/0/08/White_EN_boxart.png" alt="White Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/3/34/Black_2_EN_boxart.png" alt="Black 2 Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/1/14/White_2_EN_boxart.png" alt="White 2 Version" height="100" width="100">
 				</p>
-				<p><a href="#Gen6" style="color:black;"><b>Gen VI</b></a></p>
+				<p><input type="radio" name="Gen" value=6 id="txt_Gen"><b>Gen VI</b></p>
 				<p style="text-align:center;">
 					<img src="https://cdn.bulbagarden.net/upload/2/27/X_EN_boxart.png" alt="X Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/4/41/Y_EN_boxart.png" alt="Y Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/5/5b/Omega_Ruby_EN_boxart.png" alt="Omega Ruby Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/f/f2/Alpha_Sapphire_EN_boxart.png" alt="Alpha Sapphire Version" height="100" width="100">
 				</p>
-				<p><a href="#Gen7" style="color:black;"><b>Gen VII</b></a></p>
+				<p><input type="radio" name="Gen" value=7 id="txt_Gen"><b>Gen VII</b></p>
 				<p style="text-align:center;">
 					<img src="https://cdn.bulbagarden.net/upload/0/06/Sun_EN_boxart.png" alt="Sun Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/3/38/Moon_EN_boxart.png" alt="Moon Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/d/de/Ultra_Sun_EN_boxart.png" alt="Ultra Sun Version" height="100" width="100">
 					<img src="https://cdn.bulbagarden.net/upload/8/86/Ultra_Moon_EN_boxart.png" alt="Ultra Moon Version" height="100" width="100">
 				</p>
-			</nav>
-		</div>
-
-		<!-- Coluna central -->
-		<div class="coluna C_meio">
-			<h1 style="text-align:center;">
-				Tier Pokemon
-				<select id="Tier_Value" onchange="Valor_Tier()">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-				</select>
-			</h1>
-
-			<hr>
-			<div id="Gen1"> </div>
-			<hr>
-			<div id="Gen2">	</div>
-			<hr>
-			<div id="Gen3">	</div>
-			<hr>
-			<div id="Gen4">	</div>
-			<hr>
-			<div id="Gen5">	</div>
-			<hr>
-			<div id="Gen6">	</div>
-			<hr>
-			<div id="Gen7">	</div>
+				<hr>
+				<br>
+				<input type="submit">
+			</form>
+			
 		</div>
 
 		<!-- Coluna da direita -->
 		<div class="coluna C_direita">
-			<h1 style="text-align:center;">
-				Número de Players <br>
-				<input type="range" id="Players_Value" onchange="Num_Jogadores()" min=2 max=6 value=4>
-				<p id="NumPlayers"> 4</p>
-			</h1>
-			<p id="ListaPickBan"> </p>
-			<div>
-				<h2>Player 1</h2>
-				<img src="https://image.flaticon.com/icons/png/512/21/21104.png" alt="Imagem Usuário" height="100" width="100">
-				<p><b>Nome</b></p>
-				<p>Ban</p>
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<p>Pick</p>
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-			</div>
-			<div>
-				<h2>Player 2</h2>
-				<img src="https://image.flaticon.com/icons/png/512/21/21104.png" alt="Imagem Usuário" height="100" width="100">
-				<p><b>Nome</b></p>
-				<p>Ban</p>
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<p>Pick</p>
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-			</div>
+			
 		</div>
 
 		</section>
 		<footer style="height:50px;">
 			
 		</footer>
-
 		<script>
-			//Função para filtro de Tier
-			function Valor_Tier()
-			{
-				var Valor_Tier_Selecionado = document.getElementById("Tier_Value").value;
-				Criar_Botoes(Valor_Tier_Selecionado);
-			}
-
-			//Função para número de Jogadores
 			function Num_Jogadores()
 			{
 				var Valor_Num_Jogadores = document.getElementById("Players_Value").value;
 				document.getElementById("NumPlayers").innerHTML = Valor_Num_Jogadores;
-				Criar_Jogadores(Valor_Num_Jogadores);
-			}
-			
-			//Função para mudança de status de pick/ban
-			function PickBan(Index)
-			{
-				Banco_de_Dados.Pokemon_List[Index].StatusPick = !Banco_de_Dados.Pokemon_List[Index].StatusPick;
-				if (Banco_de_Dados.Pokemon_List[Index].StatusPick)
-				{
-					document.getElementById('Dex'+Banco_de_Dados.Pokemon_List[Index].Pokedex).style.filter = "grayscale(1)";
-				}
-				else
-					document.getElementById('Dex'+Banco_de_Dados.Pokemon_List[Index].Pokedex).style.filter = "grayscale(0)";
+				Nomes_Jogadores(Valor_Num_Jogadores);
 			}
 
-
-			// Função para criação dos botões de cada seção
-			function Criar_Botoes(Valor_Tier_Selecionado)
+			function Nomes_Jogadores(Valor_Num_Jogadores)
 			{
-				Tamanho_Banco_de_Dados = Banco_de_Dados.Pokemon_List.length;
-
-				for (j = 1; j<=7; j++)
-				{
-					//Criação do texto dos botões da Gens
-					var Texto_Botoes = ""; // limpa a cada novo ciclo
-					var Primeiro_Botao = 0; // limpa a cada novo ciclo
-					for (i = 0; i<Tamanho_Banco_de_Dados ; i++)	
+				var Texto_Players = ""; // limpa a cada nova chamada
+				for (i=1; i<=Valor_Num_Jogadores; i++)
+				{	
+					if(i==1)
 					{
-						if(Banco_de_Dados.Pokemon_List[i].Tier==Valor_Tier_Selecionado)
-						{
-							if(Banco_de_Dados.Pokemon_List[i].Generation==j)
-							{
-								if(Primeiro_Botao==0)
-								{
-// dois onclick events - onclick="Display1();Display2()"
-									//Confere se o botão já foi apertado antes e se sim, coloca o filtro
-									if(Banco_de_Dados.Pokemon_List[i].StatusPick)
-									{
-										Texto_Botoes = '<button onclick="PickBan('+i+')">'+
-											'<img id=Dex'+Banco_de_Dados.Pokemon_List[i].Pokedex+' src='+Banco_de_Dados.Pokemon_List[i].Imagem+' alt='+Banco_de_Dados.Pokemon_List[i].Nome+' height="100" width="100" style="filter:grayscale(1)">'+
-											'<br>'+Banco_de_Dados.Pokemon_List[i].Nome+
-										'</button>';
-										Primeiro_Botao++; //Não entra de novo aqui
-									}
-									else
-									{
-										Texto_Botoes = '<button onclick="PickBan('+i+')">'+
-											'<img id=Dex'+Banco_de_Dados.Pokemon_List[i].Pokedex+' src='+Banco_de_Dados.Pokemon_List[i].Imagem+' alt='+Banco_de_Dados.Pokemon_List[i].Nome+' height="100" width="100">'+
-											'<br>'+Banco_de_Dados.Pokemon_List[i].Nome+
-										'</button>';
-										Primeiro_Botao++; //Não entra de novo aqui
-									}
-								}
-								else
-								{
-									//Confere se o botão já foi apertado antes e se sim, coloca o filtro
-									if(Banco_de_Dados.Pokemon_List[i].StatusPick)
-									{
-										Texto_Botoes = Texto_Botoes+'<button onclick="PickBan('+i+')">'+
-											'<img id=Dex'+Banco_de_Dados.Pokemon_List[i].Pokedex+' src='+Banco_de_Dados.Pokemon_List[i].Imagem+' alt='+Banco_de_Dados.Pokemon_List[i].Nome+' height="100" width="100" style="filter:grayscale(1)">'+
-											'<br>'+Banco_de_Dados.Pokemon_List[i].Nome+
-										'</button>';
-									}
-									else
-									{
-										Texto_Botoes = Texto_Botoes+'<button onclick="PickBan('+i+')">'+
-											'<img id=Dex'+Banco_de_Dados.Pokemon_List[i].Pokedex+' src='+Banco_de_Dados.Pokemon_List[i].Imagem+' alt='+Banco_de_Dados.Pokemon_List[i].Nome+' height="100" width="100">'+
-											'<br>'+Banco_de_Dados.Pokemon_List[i].Nome+
-										'</button>';
-									}
-								}
-							}
-						}
-					}	
-					idGeracao = 'Gen'+j; //identificando os Ids
-					switch(j)
+						//Primeiro texto
+						Texto_Players='<label for="username">Usuário:</label> <input type="text" id="username" name="username'+i+'"><br>';
+					}
+					else
 					{
-						case 1:
-							document.getElementById(idGeracao).innerHTML = '<h2 style="text-align:center;">Gen I</h2> <hr>'+Texto_Botoes;
-						break;
-						case 2:
-							document.getElementById(idGeracao).innerHTML = '<h2 style="text-align:center;">Gen II</h2> <hr>'+Texto_Botoes;
-						break;
-						case 3:
-							document.getElementById(idGeracao).innerHTML = '<h2 style="text-align:center;">Gen III</h2> <hr>'+Texto_Botoes;
-						break;
-						case 4:
-							document.getElementById(idGeracao).innerHTML = '<h2 style="text-align:center;">Gen IV</h2> <hr>'+Texto_Botoes;
-						break;
-						case 5:
-							document.getElementById(idGeracao).innerHTML = '<h2 style="text-align:center;">Gen V</h2> <hr>'+Texto_Botoes;
-						break;
-						case 6:
-							document.getElementById(idGeracao).innerHTML = '<h2 style="text-align:center;">Gen VI</h2> <hr>'+Texto_Botoes;
-						break;
-						case 7:
-							document.getElementById(idGeracao).innerHTML = '<h2 style="text-align:center;">Gen VII</h2> <hr>'+Texto_Botoes;
-						break;
-					}	
+						Texto_Players=Texto_Players+'<label for="username">Usuário:</label> <input type="text" id="username" name="username'+i+'"><br>';
+					}
+					
 				}
-//console.log(Banco_de_Dados.Pokemon_List);
+				console.log(Texto_Players);
+				document.getElementById("NamePlayers").innerHTML = Texto_Players;
 			}
-
-			// Função para criação os jogadores
-/*			function Criar_Jogadores(Valor_Num_Jogadores)
-			{
-			for (i=1)
-			<div>
-				<h2>Player 2</h2>
-				<img src="https://image.flaticon.com/icons/png/512/21/21104.png" alt="Imagem Usuário" height="100" width="100">
-				<p><b>Nome</b></p>
-				<p>Ban</p>
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;filter: grayscale(1);">
-				<p>Pick</p>
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-				<img src="https://pngimg.com/uploads/pokeball/pokeball_PNG13.png" alt="Imagem Usuário" height="100" width="100" style="border: 1px solid black;">
-			</div>
-			}
-*/
-//var Pick=["Dex001","Dex002","Dex003","Dex004","Dex005","Dex006"];
-//alert(Pick);
-
-			//Valores Defaults para inicializar a página
-			Criar_Botoes(1);
-			Criar_Jogadores
 		</script>
+
 	</body>
 </html>

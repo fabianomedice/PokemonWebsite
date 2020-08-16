@@ -1,0 +1,22 @@
+body 
+{
+    /*background-color: #CFD8E3;*/
+    background-color: #D4D4E1;
+    padding: 0px;
+    margin: 0px;
+}
+
+table, th, td	
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+/*Classe das colunas do corpo*/
+.coluna	{
+    box-sizing: border-box; /*faz o width medir todos os elementos juntos e não só o conteúdo*/
+    float: left;
+    padding: 10px;
+    text-align: center;
+}
+
