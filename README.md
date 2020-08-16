@@ -8,19 +8,19 @@ O banco de dados deve conter: <br>
 <br>
 Tabela 1: "pokemon_list"<br>
 13 Colunas:<br>
-- "Generation" - tipo: int(11) <br>
-- "Pokedex" - tipo: int(11) <br>
-- "Codigo" - tipo: text	utf8mb4_unicode_ci <br>
-- "Nome" - tipo: text	utf8mb4_unicode_ci <br>
-- "TierGen1" - tipo: <br>
-- "TierGen2" - tipo: int(11) <br>
-- "TierGen3" - tipo: int(11) <br>
-- "TierGen4" - tipo: int(11) <br>
-- "TierGen5" - tipo: int(11) <br>
-- "TierGen6" - tipo: int(11) <br>
-- "TierGen7" - tipo: int(11) <br>
-- "StatusPick" - tipo: text	utf8mb4_unicode_ci <br>
-- "Imagem" - tipo: text	utf8mb4_unicode_ci <br>
+-"Generation" - tipo: int(11) <br>
+-"Pokedex" - tipo: int(11) <br>
+-"Codigo" - tipo: text	utf8mb4_unicode_ci <br>
+-"Nome" - tipo: text	utf8mb4_unicode_ci <br>
+-"TierGen1" - tipo: <br>
+-"TierGen2" - tipo: int(11) <br>
+-"TierGen3" - tipo: int(11) <br>
+-"TierGen4" - tipo: int(11) <br>
+-"TierGen5" - tipo: int(11) <br>
+-"TierGen6" - tipo: int(11) <br>
+-"TierGen7" - tipo: int(11) <br>
+-"StatusPick" - tipo: text	utf8mb4_unicode_ci <br>
+-"Imagem" - tipo: text	utf8mb4_unicode_ci <br>
 <br>
 Tabela 2: "torneios"<br>
 6 Colunas:<br>
